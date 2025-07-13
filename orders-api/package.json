@@ -1,5 +1,5 @@
 {
-  "name": "listings-api",
+  "name": "orders-api",
   "version": "1.0.0",
   "description": "This is a template repository for the first assignment in BVD 103 at McMaster Continuing Education.",
   "main": "index.ts",

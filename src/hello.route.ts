@@ -1,4 +1,4 @@
-import { Get, Path, Route } from 'tsoa'
+/* import { Get, Path, Route } from 'tsoa'
 
 export type HelloMessage = string
 
@@ -10,4 +10,4 @@ export class HelloRouter {
   ): Promise<HelloMessage> {
     return `Hello ${name}`
   }
-}
+} */

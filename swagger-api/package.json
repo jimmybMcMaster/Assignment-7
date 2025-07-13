@@ -1,14 +1,13 @@
 {
-  "name": "listings-api",
+  "name": "swagger-api",
   "version": "1.0.0",
   "description": "This is a template repository for the first assignment in BVD 103 at McMaster Continuing Education.",
   "main": "index.ts",
   "scripts": {
-    "build-spec": "npx tsoa spec && npx tsoa routes",
-    "start-server": "npm run build-spec && tsx ./index.ts",
-    "lint": "eslint ./**/*.ts",
-    "fix-lint": "eslint --fix ./**/*.ts",
-    "check-types": "tsc --noEmit",
+    "start-server": "./generate-openapi.sh && tsx ./index.ts",
+    "lint": "./generate-openapi.sh && eslint ./**/*.ts",
+    "fix-lint": "./generate-openapi.sh && eslint --fix ./**/*.ts",
+    "check-types": "./generate-openapi.sh && tsc --noEmit",
     "test": "vitest",
     "test:ci": "vitest run"
   },
@@ -18,7 +17,7 @@
   "dependencies": {
     "@koa/cors": "^5.0.0",
     "@koa/router": "^12.0.1",
-    "koa": "^2.16.1",
+    "koa": "^2.15.2",
     "koa-bodyparser": "^4.4.1",
     "koa-qs": "^3.0.0",
     "koa-zod-router": "^2.2.0",

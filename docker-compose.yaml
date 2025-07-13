@@ -11,26 +11,32 @@ services:
     volumes:
       - ./adapter:/source/adapter
       
-  server:
+  listings-api:
     image: node:20
     volumes:
-      - ./:/app
+      - ./listings-api:/app
     command: npx -y tsx ./index.ts
     working_dir: /app
+    expose:
+      - "3000"
 
-  server2:
+  warehouse-api:
     image: node:20
     volumes:
-      - ./:/app
+      - ./warehouse-api:/app
     command: npx -y tsx ./index.ts
     working_dir: /app
+    expose:
+     - "3000"
     
-  server3:
+  orders-api:
     image: node:20
     volumes:
-      - ./:/app
+      - ./orders-api:/app
     command: npx -y tsx ./index.ts
     working_dir: /app
+    expose:
+    - "3000"
 
   mongo:
     image: mongo:latest
