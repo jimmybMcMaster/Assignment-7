@@ -1,3 +1,16 @@
 import server from './server'
+import { connectRabbitMQ } from './rabbitmq'
 
-server(3000).then(() => { console.log('Exiting Application') }).catch((err) => { console.error(err) })
+async function startApp (): Promise<void> {
+  try {
+    await connectRabbitMQ()
+    await server(3000)
+    console.log('Server is running')
+  } catch (err) {
+    console.error('Startup failed:', err)
+  }
+}
+
+startApp().catch((err) => {
+  console.error('Error during startup:', err)
+})

@@ -40,3 +40,9 @@ services:
 
   mongo:
     image: mongo:latest
+
+  rabbitmq:
+  image: rabbitmq:4-management
+  ports:
+    - "5672:5672"     
+    - "15672:15672"
